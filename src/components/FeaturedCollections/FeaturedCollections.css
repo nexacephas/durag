@@ -1,0 +1,88 @@
+/* ===== Section ===== */
+.collections {
+  background: white;
+}
+
+/* Header */
+.collections-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.collections-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.collections-header p {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Grid */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Card */
+.collection-card {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Image */
+.collection-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Hover zoom */
+.collection-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay */
+.collection-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.1)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  color: white;
+}
+
+/* Text */
+.collection-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.collection-overlay span {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .collections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-card {
+    height: 360px;
+  }
+}

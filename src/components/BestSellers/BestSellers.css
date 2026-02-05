@@ -1,0 +1,145 @@
+/* ===== Section ===== */
+.best-sellers {
+  background: #fff;
+}
+
+/* Header */
+.best-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.best-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.best-header p {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* Card */
+.product-card {
+  cursor: pointer;
+}
+
+/* Image Wrapper */
+.product-image {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+/* Image */
+.product-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Hover zoom */
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Trust Tag */
+.product-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.7rem;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Add to Cart */
+.add-to-cart {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* Show on hover */
+.product-card:hover .add-to-cart {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Info */
+.product-info h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+}
+
+.dots {
+  letter-spacing: 2px;
+}
+
+.muted {
+  opacity: 0.3;
+}
+
+.score {
+  color: #777;
+}
+
+/* Price */
+.price {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image img {
+    height: 280px;
+  }
+}

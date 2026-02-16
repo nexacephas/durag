@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FiShoppingBag, FiMenu, FiX } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -12,7 +13,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -21,20 +21,24 @@ const Navbar = () => {
     <>
       <header className={`navbar-wrapper ${scrolled ? "scrolled" : ""}`}>
         <nav className="navbar container">
+
           {/* Logo */}
-          <div className="logo">OREMU</div>
+          <div className="logo">
+            <Link to="/">Vibez360Waves</Link>
+          </div>
 
           {/* Desktop Links */}
           <ul className="nav-links">
-            <li>Home</li>
-            <li>Shop</li>
-            <li>Collection</li>
-            <li>About</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/shop">Shop</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
 
           {/* Right Actions */}
           <div className="nav-actions">
-            <button className="login-btn">Login</button>
+            <button className="login-btn"><Link to="/auth">Login</Link></button>
 
             <div
               className="cart-icon"
@@ -43,7 +47,6 @@ const Navbar = () => {
               <FiShoppingBag />
               <span className="cart-badge">0</span>
 
-              {/* Cart Dropdown */}
               {cartOpen && (
                 <div className="cart-dropdown">
                   <p className="empty">Your cart is empty</p>
@@ -66,20 +69,31 @@ const Navbar = () => {
           <span>Menu</span>
           <FiX onClick={() => setMenuOpen(false)} />
         </div>
+<ul className="mobile-links">
+  <li>
+    <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+  </li>
+  <li>
+    <Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
+  </li>
+  <li>
+    <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+  </li>
+  <li>
+    <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+  </li>
+  <li>
+    <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+  </li>
+  <li className="login">
+    <Link to="/auth" onClick={() => setMenuOpen(false)}>Login</Link>
+  </li>
+</ul>
 
-        <ul className="mobile-links">
-          <li>Home</li>
-          <li>Shop</li>
-          <li>Collection</li>
-          <li>About</li>
-          <li className="login">Login</li>
-        </ul>
       </div>
 
       {/* Overlay */}
-      {menuOpen && (
-        <div className="overlay" onClick={() => setMenuOpen(false)} />
-      )}
+      {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)} />}
     </>
   );
 };

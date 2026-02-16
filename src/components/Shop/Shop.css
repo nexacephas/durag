@@ -1,0 +1,99 @@
+/* ===== SHOP CONTAINER ===== */
+.shop-container {
+  padding: 4rem 6%;
+  background-color: #ffffff;
+  color: #111;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.shop-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.shop-container h1::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #000;
+  display: block;
+  margin: 1rem auto 0;
+}
+
+/* ===== GRID ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== IMAGE SECTION ===== */
+.product-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== CONTENT SECTION ===== */
+.product-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1.2rem 1rem 0.5rem;
+}
+
+.product-card .category {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 1rem;
+}
+
+.product-card .price {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.8rem 1rem 1.2rem;
+}
+
+/* ===== BUTTON ===== */
+.product-card button {
+  width: calc(100% - 2rem);
+  margin: 0 1rem 1.5rem;
+  padding: 0.8rem;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-card button:hover {
+  background: #000;
+  color: #fff;
+}
+

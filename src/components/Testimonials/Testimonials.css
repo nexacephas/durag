@@ -1,13 +1,11 @@
-/* ===== Section ===== */
 .testimonials {
   background: #f8f8f8;
   padding: 80px 0;
 }
 
-/* Header */
 .test-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .test-header h2 {
@@ -20,15 +18,25 @@
   color: #777;
 }
 
-/* Grid */
-.test-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+/* Carousel */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-/* Card */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
 .test-card {
+  flex: 0 0 calc(100% / 3); /* show 3 cards */
   background: white;
   border-radius: 18px;
   padding: 28px 20px 40px 20px;
@@ -37,6 +45,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 0 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -79,15 +88,51 @@
   color: #999;
 }
 
-/* ===== Responsive ===== */
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #C6A14A;
+  border: none;
+  color: #000;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.arrow:hover {
+  background: #fff;
+  color: #C6A14A;
+}
+
+.arrow.left {
+  left: -25px;
+}
+
+.arrow.right {
+  right: -25px;
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
-  .test-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .test-card {
+    flex: 0 0 calc(100% / 2);
   }
 }
 
 @media (max-width: 600px) {
-  .test-grid {
-    grid-template-columns: 1fr;
+  .test-card {
+    flex: 0 0 100%;
+  }
+  .arrow.left {
+    left: 5px;
+  }
+  .arrow.right {
+    right: 5px;
   }
 }

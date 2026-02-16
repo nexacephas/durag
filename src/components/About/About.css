@@ -67,3 +67,27 @@
     text-align: center;
   }
 }
+.about-signature {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.about-text h2::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #000;
+  display: block;
+  margin-top: 0.5rem;
+}

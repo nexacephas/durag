@@ -6,22 +6,23 @@ const Hero = () => {
       <div className="hero-overlay" />
 
       <div className="hero-content container">
-        <span className="hero-tag">NEW COLLECTION 2026</span>
+        <span className="hero-tag">MASTERY • DISCIPLINE • STYLE</span>
 
         <h1>
-          Timeless <br />
-          Fashion <br />
-          For Modern Souls
+          Elevate Your <br />
+          Wave Game <br />
+          Own Your Presence
         </h1>
 
         <p>
-          Designed for those who move with confidence.
-          Minimal. Bold. Unapologetically premium.
+          Vibez360Waves is more than grooming — it’s a lifestyle.
+          Built for those committed to elite 360 waves,
+          confidence, and intentional self-expression.
         </p>
 
         <div className="hero-actions">
-          <button className="btn btn-dark">Shop Collection</button>
-          <button className="btn outline">Explore Lookbook</button>
+          <button className="btn btn-dark">Shop Essentials</button>
+          <button className="btn outline">Join The Movement</button>
         </div>
       </div>
     </section>
